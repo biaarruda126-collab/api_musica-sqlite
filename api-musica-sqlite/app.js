@@ -4,9 +4,9 @@ const app = express();
 const port = 3000;
 // Middleware para analisar o corpo das requisições em JSON
 app.use(express.json());
-// Importando as rotas do cliente
+// Importando as rotas da musica
 const musicaRoutes = require('./routes/musicaRoutes');
-// Usando as rotas do cliente com o prefixo '/clientes'
+// Usando as rotas da música com o prefixo '/musica'
 app.use('/musica', musicaRoutes);
 // Iniciando o servidor na porta especificada
 app.listen(port, () => {
