@@ -43,4 +43,16 @@ exports.updateMusica = (req, res) => {
       res.status(404).send({ message: "Música não encontrada" });
     }
   });
-
+};
+// Controlador para deletar uma música
+exports.deleteMusica = (req, res) => {
+  Musica.deleteMusica(req.params.id, (err, result) => {
+    if (err) {
+      res.status(500).send(err);
+    } else if (result.changes) {
+      res.status(200).json({ message: "Música deletada com sucesso" });
+    } else {
+      res.status(404).send({ message: "Musica não encontrada" });
+    }
+  });
+};
